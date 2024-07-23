@@ -21,7 +21,7 @@ TOKEN = ""
 """
 
 bot = Client(
-    "NekoBest" ,
+    "Tomochan" ,
     api_id = API_ID ,
     api_hash = API_HASH ,
     bot_token = TOKEN
@@ -29,22 +29,22 @@ bot = Client(
 
 PM_START_TEXT = """
 **Welcome** {}~kun ฅ(≈>ܫ<≈)
-`I'm A Neko Themed Telegram Bot Using Nekos.best! `
+`I'm A Tomo Anime Themed Telegram Bot Using Pyrogram! `
 **Make Your Groups Active By Adding Me There! ××**
 """
 
 OWO = (
-    "*Neko pats {} on the head.",
+    "*Tomo pats {} on the head.",
     "*gently rubs {}'s head*.",
-    "*Neko mofumofus {}'s head*",
-    "*Neko messes up {}'s head*",
-    "*Neko intensly rubs {}'s head*",
+    "*Tomo mofumofus {}'s head*",
+    "*Tomo messes up {}'s head*",
+    "*Tomo intensly rubs {}'s head*",
     "*{}'s waifu pats their head*",
     "*{}'s got free headpats*",
     "No pats for {}!",
 )
 
-aasf = (
+akira = (
  "(*)^(*) *lazy arrival* zzzZZ(Z){}-kun I'm hungry...",
  "OwO why are calling me *wags tail in excitement* {} Do you have have cookies?",
  "^~^ *peeks by wall* Oh! {} Meowwww",
@@ -53,7 +53,7 @@ aasf = (
  "Hello UwU {} I'm here to play, Meow"
 )
 
-help_text = "**Hoi {} I Am A Pyrogram Based Telegram Bot Using Nekos.best Click The Bellow But To Check My Commands**"
+help_text = "**Hoi {} I Am A Pyrogram Based Telegram Bot Click The Bellow But To Check My Commands**"
 
 @bot.on_message(filters.command("kiss"))
 async def kiss(_, message):
@@ -639,10 +639,10 @@ def sleep(_, message):
         z = ". . . (∪｡∪)｡｡｡zzzZZ"
         message.reply_text(z)
 
-@bot.on_message(filters.command("neko"))
+@bot.on_message(filters.command("tomo"))
 def neko(_, message):
     name = message.from_user.first_name
-    ke = random.choice(aasf)
+    ke = random.choice(akira)
     message.reply_text(
         ke.format(name)
     )
@@ -650,8 +650,8 @@ def neko(_, message):
 @bot.on_message(filters.command("start"))
 async def start(_, message):
       buttons = [[
-          InlineKeyboardButton("[► Repo ◄]", url="https://github.com/Team-Aasf/Nekos-Best-Bot"),
-          InlineKeyboardButton("[► Deploy ◄]", url="https://heroku.com/deploy?template=https://github.com/Team-Aasf/Nekos-Best-Bot")
+          InlineKeyboardButton("[► Repo ◄]", url="https://github.com/ashui501/tomo-chan-bot"),
+          InlineKeyboardButton("[► Deploy ◄]", url="https://heroku.com/deploy?template=https://github.com/ashui501/tomo-chan-bot")
       ]]
       url = "https://nekos.best/api/v2/neko"
       r = requests.get(url)
@@ -670,9 +670,9 @@ async def start(_, message):
 
 @bot.on_message(filters.command("help"))
 def help(_, message):
-    pic = "https://telegra.ph/file/bdfbcff53832da88189d1.jpg"
+    pic = "https://graph.org/file/c512c6dcdc9d59deb2012.jpg"
     buttons = [[
-        InlineKeyboardButton("[► Read Here ◄]", url="https://telegra.ph/NekoBesBot-05-26"),
+        InlineKeyboardButton("[► Read Here ◄]", url="https://telegra.ph/"),
     ]]
     message.reply_photo(pic, caption=help_text.format(message.from_user.mention),
                              reply_markup=InlineKeyboardMarkup(buttons))
